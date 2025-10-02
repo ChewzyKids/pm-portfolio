@@ -1,0 +1,9 @@
+node_modules
+.next
+dist
+# Node / Next.js
+node_modules/
+.next/
+dist/
+.vercel/
+.DS_Store
