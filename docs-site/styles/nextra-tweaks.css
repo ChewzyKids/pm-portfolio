@@ -1,3 +1,8 @@
-/* tighten readable width + underline links */
-.nextra-content { max-width: 72ch; }
-.nextra-content a { text-decoration: underline; }
+.hero {
+display: flex; gap: 12px; margin: 16px 0 24px;
+}
+.btn {
+padding: 10px 14px; border: 1px solid #e3e3e3; border-radius: 8px;
+text-decoration: none; font-weight: 600;
+}
+.btn.primary { border-color: transparent; background: #111; color: #fff; }
