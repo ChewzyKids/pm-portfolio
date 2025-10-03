@@ -1,5 +1,24 @@
 # Customer Feedback Survey Builder
-AI-powered surveys to capture actionable insight in < 2 minutes.
 
-**Repo Section:** \`/Consent_Tracker_Tool\` (concept assets)
-**Highlights:** Smart templates • QR links • CSV export • Tone by sentiment
+**What**: AI-assisted survey builder to capture actionable insight in < 2 minutes.
+**Why**: Early teams delay feedback loops; this makes customer voice instant and contextual.
+**Outcome**: Validated framework across **100+ BofA client scenarios** (concept testing); reduced feedback-to-action latency.
+
+### Highlights
+- Smart templates by product type + sentiment
+- Instant QR / link distribution; no login
+- CSV export → sprint planning
+- Tone control (empathetic for incidents; energetic for wins)
+
+### Tech & Artifacts
+- Prompt engineering (GPT-4, Claude)
+- Figma user flows; Canva assets
+- Markdown prototyping
+
+**CLI (concept):**
+```bash
+$ npm run generate-survey --context="mobile-app-ux" --tone="empathetic"
+✓ Template created (8 Qs)
+✓ QR + share link generated
+$ npm run export-insights
+✓ Top pain: onboarding navigation (23 mentions)
