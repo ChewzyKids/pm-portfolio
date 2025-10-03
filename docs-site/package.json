@@ -1,8 +1,1 @@
-{
-"scripts": {
-"dev": "next dev",
-"dev:3001": "next dev -p 3001",
-"build": "next build",
-"start": "next start"
-}
-}
+{"name":"docs-site","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"next dev","dev:3001":"next dev -p 3001","build":"next build","start":"next start"},"dependencies":{"next":"14.1.0","nextra":"2.13.4","nextra-theme-docs":"2.13.4","react":"18.2.0","react-dom":"18.2.0"},"devDependencies":{"@types/node":"24.6.2","typescript":"5.9.3"}}

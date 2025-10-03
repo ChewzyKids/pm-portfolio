@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Light polish */
 .prose a { text-decoration: underline; }
+.prose a:hover { opacity: .85; text-decoration-thickness: 2px; }
+.prose h1 { letter-spacing: -0.02em; }
+
