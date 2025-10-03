@@ -1,14 +1,17 @@
-import nextra from 'nextra';
+
+Joseph M. Bryant <joebryantjr@gmail.com>
+3:06 PM (0 minutes ago)
+to me
+
+import nextra from 'nextra'
 
 const withNextra = nextra({
 theme: 'nextra-theme-docs',
-themeConfig: './theme.config.ts', // using TS config file is fine
-mdxOptions: {},
-});
+themeConfig: './theme.config.tsx'
+})
 
 const nextConfig = {
-reactStrictMode: true,
-// DO NOT enable appDir here; we are on Pages Router.
-};
+reactStrictMode: true
+}
 
-export default withNextra(nextConfig);
+export default withNextra(nextConfig)
