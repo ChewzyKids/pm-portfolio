@@ -1,197 +1,219 @@
-/* ========== Global Prose Styling for Portfolio (Nextra overrides) ========== */
+/* =========================================================
+   PM Portfolio – Global Styles (Still Waters)
+   - Calm, confident palette with subtle motion
+   - Works with Nextra (prose + buttons + cards)
+   - Dark-first with light-mode fallback
+   ========================================================= */
 
-/* ----- Links ----- */
+/* ---------- Design tokens ---------- */
+:root {
+  /* Core brand & neutrals */
+  --brand:        #4a7bd9;  /* muted blue */
+  --brand-2:      #3f6bc1;  /* slightly deeper for gradients */
+  --ink:          #0e1324;  /* near-black navy (dark bg contrast el.) */
+  --bg:           #0b1020;  /* deep navy */
+  --bg-elev:      #111831;  /* elevated surface */
+  --card:         #131a2e;  /* card background */
+  --line:         #202a44;  /* soft outlines */
+  --muted:        #a7b4cc;  /* subtle text */
+
+  /* Text scale (dark) */
+  --text:         #e6e9f2;
+  --text-soft:    #cfd6e6;
+  --link:         #5b8cff;
+  --link-hover:   #86a7ff;
+
+  /* Effects */
+  --ring:         0 0 0 3px rgba(91,140,255,.33);
+  --shadow:       0 8px 24px rgba(7, 10, 20, .35);
+  --shadow-soft:  0 1px 2px rgba(0,0,0,.25);
+
+  /* Card motion */
+  --lift:         translateY(-4px) scale(1.01);
+}
+
+/* ---------- Base canvas ---------- */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  accent-color: var(--brand);
+}
+
+/* Accessibility: keyboard focus */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 8px;
+  transition: box-shadow .15s ease;
+}
+
+/* ---------- Links (general) ---------- */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Nextra prose overrides ---------- */
 .prose a {
   text-decoration: underline;
+  text-underline-offset: 2px;
   font-weight: 500;
-  color: #2563eb; /* blue-600 */
-  transition: color 0.2s ease, background-color 0.2s ease;
+  color: var(--link);
+  transition: color .2s ease, background-color .2s ease;
 }
 .prose a:hover {
-  color: #1d4ed8; /* blue-700 */
-  background-color: rgba(37, 99, 235, 0.08);
-  border-radius: 3px;
-  text-decoration: none;
+  color: var(--link-hover);
+  background-color: rgba(91,140,255,.10);
+  border-radius: 4px;
   padding: 0 2px;
+  text-decoration: none;
 }
 
-/* Dark */
-.dark .prose a {
-  color: #60a5fa; /* blue-400 */
-}
-.dark .prose a:hover {
-  color: #93c5fd; /* blue-300 */
-  background-color: rgba(96, 165, 250, 0.15);
-}
-
-/* ----- Headings ----- */
-.prose h1,
-.prose h2,
-.prose h3 {
+.prose h1, .prose h2, .prose h3 {
+  color: var(--text);
   font-weight: 700;
   line-height: 1.25;
-  margin-top: 1.75em;
-  margin-bottom: 0.75em;
-  color: #111827; /* gray-900 */
+  margin-top: 1.6em;
+  margin-bottom: .7em;
 }
-/* Dark */
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3 {
-  color: #e5e7eb; /* gray-200 */
-}
+.prose h3 { margin-top: 1.2em; font-weight: 650; }
 
-/* ----- Paragraphs ----- */
 .prose p {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-  line-height: 1.7;
-  color: #374151; /* gray-700 */
-}
-/* Dark */
-.dark .prose p {
-  color: #d1d5db; /* gray-300 */
+  margin: .75em 0;
+  line-height: 1.75;
+  color: var(--text-soft);
 }
 
-/* ----- Lists ----- */
-.prose ul,
-.prose ol {
+.prose ul, .prose ol {
   padding-left: 1.5em;
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
+  margin: .75em 0;
 }
-.prose li {
-  margin-bottom: 0.5em;
-}
-/* Dark */
-.dark .prose li {
-  color: #d1d5db; /* gray-300 */
-}
+.prose li { margin-bottom: .5em; color: var(--text-soft); }
 
-/* ----- Blockquotes / Callouts ----- */
 .prose blockquote {
-  border-left: 4px solid #3b82f6; /* blue-500 */
+  border-left: 4px solid var(--brand);
   padding-left: 1em;
-  color: #1f2937; /* gray-800 */
-  font-style: italic;
-  background: #f9fafb; /* light gray */
-  border-radius: 4px;
-  margin: 1.25em 0;
-}
-/* Dark */
-.dark .prose blockquote {
-  border-left-color: #60a5fa; /* blue-400 */
-  color: #e5e7eb;            /* gray-200 */
-  background: rgba(96, 165, 250, 0.08);
-}
-
-/* ----- Buttons (Nextra) ----- */
-.nx-button {
-  padding: 0.6rem 1.25rem;
-  font-weight: 600;
+  color: var(--text);
+  background: rgba(91,140,255,.06);
   border-radius: 6px;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-.nx-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  transform: translateY(-1px);
+  margin: 1.25em 0;
+  font-style: italic;
 }
 
-/* Primary */
-.nx-button-primary {
-  background-color: #2563eb !important; /* blue-600 */
-  color: white !important;
-  border: none;
-}
-.nx-button-primary:hover {
-  background-color: #1d4ed8 !important; /* blue-700 */
-  transform: translateY(-1px);
-}
-
-/* Dark buttons */
-.dark .nx-button:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-}
-.dark .nx-button-primary {
-  background-color: #3b82f6 !important; /* blue-500 */
-  color: #0b1220 !important;            /* near-black text for contrast */
-}
-.dark .nx-button-primary:hover {
-  background-color: #60a5fa !important; /* blue-400 */
-}
-
-/* ----- Small utilities ----- */
 .prose hr {
   border: none;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--line);
   margin: 2rem 0;
-}
-.dark .prose hr {
-  border-top-color: #374151; /* gray-700 */
 }
 
 .prose code {
-  background: rgba(2, 6, 23, 0.04);
-  padding: 0.15rem 0.35rem;
+  background: rgba(255,255,255,.06);
+  padding: .2rem .4rem;
   border-radius: 4px;
+  font-size: .95em;
 }
-.dark .prose code {
-  background: rgba(255, 255, 255, 0.06);
-}
-/* ========== Card Polish (Portfolio Grid) ========== */
 
+/* ---------- Nextra buttons ---------- */
+.nx-button {
+  padding: .6rem 1.1rem;
+  font-weight: 600;
+  border-radius: .6rem;
+  transition: transform .15s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow-soft);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+}
+.nx-button:hover {
+  background: rgba(255,255,255,.06);
+  transform: translateY(-1px);
+}
+
+.nx-button-primary {
+  background: linear-gradient(180deg, var(--brand), var(--brand-2)) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: var(--shadow);
+}
+.nx-button-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+/* Utility CTA class (for MDX) */
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .65rem 1rem; border-radius: .65rem;
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  color: #fff; font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.04); }
+.btn.secondary {
+  background: var(--bg-elev);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* ---------- Card Grid (portfolio) ---------- */
 .nextra-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
 
 .nextra-card {
-  background: white;
+  background: var(--card);
   border-radius: 12px;
-  border: 1px solid #e5e7eb; /* gray-200 */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease-in-out;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
   overflow: hidden;
   cursor: pointer;
-  padding: 1.25rem;
+  padding: 1.2rem;
 }
-
 .nextra-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
-  border-color: #3b82f6; /* blue-500 */
+  transform: var(--lift);
+  box-shadow: 0 12px 22px rgba(7, 10, 20, .45);
+  border-color: var(--link);
+  background-color: #151e38; /* slight lift */
 }
 
 .nextra-card h3 {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
-  color: #111827; /* gray-900 */
+  font-weight: 650;
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+  color: var(--text);
 }
-
 .nextra-card p {
-  color: #4b5563; /* gray-600 */
-  line-height: 1.5;
-  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+  font-size: .96rem;
 }
 
-/* Dark Mode Support */
-.dark .nextra-card {
-  background: #1f2937; /* gray-800 */
-  border-color: #374151; /* gray-700 */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+/* ---------- Light mode fallback ---------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:         #f8fafc;  /* very light slate */
+    --bg-elev:    #ffffff;
+    --card:       #ffffff;
+    --line:       #e5e7eb;
+    --text:       #0f172a;
+    --text-soft:  #334155;
+    --link:       #2563eb;
+    --link-hover: #1d4ed8;
+    --shadow:     0 10px 18px rgba(2, 6, 23, .08);
+    --shadow-soft:0 1px 2px rgba(2, 6, 23, .06);
+  }
+
+  html, body { background: var(--bg); color: var(--text); }
+
+  .prose a:hover { background-color: rgba(37, 99, 235, .08); }
+  .nextra-card:hover { background-color: #ffffff; }
 }
 
-.dark .nextra-card:hover {
-  border-color: #60a5fa; /* blue-400 */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
-}
-
-.dark .nextra-card h3 {
-  color: #f3f4f6; /* gray-100 */
-}
-
-.dark .nextra-card p {
-  color: #d1d5db; /* gray-300 */
-}
+/* ---------- Small helpers ---------- */
+.muted { color: var(--muted); }
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
