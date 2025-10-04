@@ -1,3 +1,84 @@
+/* Global Prose Styling for Portfolio (Nextra overrides) */
+
+/* Links */
 .prose a {
   text-decoration: underline;
+  font-weight: 500;
+  color: #2563eb; /* blue-600 */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.prose a:hover {
+  color: #1d4ed8; /* blue-700 */
+  background-color: rgba(37, 99, 235, 0.08);
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+/* Headings */
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1.75em;
+  margin-bottom: 0.75em;
+  color: #111827; /* gray-900 */
+}
+
+/* Paragraphs */
+.prose p {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  line-height: 1.7;
+  color: #374151; /* gray-700 */
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes / Callouts */
+.prose blockquote {
+  border-left: 4px solid #3b82f6; /* blue-500 */
+  padding-left: 1em;
+  color: #1f2937; /* gray-800 */
+  font-style: italic;
+  background: #f9fafb; /* light gray */
+  border-radius: 4px;
+  margin: 1.25em 0;
+}
+
+/* Buttons (for hero section) */
+.nx-button {
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nx-button-primary {
+  background-color: #2563eb !important; /* blue-600 */
+  color: white !important;
+  border: none;
+}
+
+.nx-button-primary:hover {
+  background-color: #1d4ed8 !important; /* blue-700 */
+  transform: translateY(-1px);
+}
+
+/* Secondary button hover */
+.nx-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
