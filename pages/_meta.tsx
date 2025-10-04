@@ -1,6 +1,0 @@
-{
-  "index": "Home",
-  "cases": "Case Studies",
-  "press": "Press / Demos",
-  "resume": "Résumé"
-}
