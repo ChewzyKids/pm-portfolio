@@ -1,17 +1,10 @@
-
-Joseph M. Bryant <joebryantjr@gmail.com>
-3:06 PM (0 minutes ago)
-to me
-
+// next.config.mjs
 import nextra from 'nextra'
 
 const withNextra = nextra({
 theme: 'nextra-theme-docs',
-themeConfig: './theme.config.tsx'
+themeConfig: './theme.config.tsx',
+defaultShowCopyCode: true
 })
 
-const nextConfig = {
-reactStrictMode: true
-}
-
-export default withNextra(nextConfig)
+export default withNextra()
