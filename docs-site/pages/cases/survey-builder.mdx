@@ -1,20 +1,36 @@
----
-title: Customer Feedback Survey Builder
-description: AI-powered survey generator that captures actionable insight in < 2 minutes.
----
-
 import { Callout } from 'nextra/components'
 
-# Customer Feedback Survey Builder
+# 🔄 Customer Feedback Survey Builder
 
-<Callout type="info">Focus: Customer Obsession • Bias for Action • Invent and Simplify</Callout>
+An AI-powered tool to capture actionable customer insight in **under 2 minutes** — built to demonstrate **Customer Obsession** and **Bias for Action**.
 
-**Problem.** Early teams delay feedback; generic tools lack context.
+<Callout type="info">
+This concept showcases rapid discovery → decision → delivery loops using AI to remove survey friction.
+</Callout>
 
-**Solution.** Smart templates by product + sentiment, QR/URL distribution, CSV export.
+## Problem
+Early teams delay feedback because tools feel heavy:
+- Generic templates lack product context
+- Setup requires engineering time
+- Tone isn’t empathetic for sensitive moments (e.g., failed orders)
 
-**Outcomes.** 100+ BofA scenarios validated; faster insight-to-iteration loop.
+## Solution
+- **Smart templates** (product + sentiment aware)
+- **Instant distribution** (QR + share links)
+- **Frictionless UX** (no login, mobile-first)
+- **Export-to-action** (CSV → backlog triage)
 
-**Tech.** Prompt engineering, Figma flows, Markdown docs.
+## Outcome
+- Validated against **100+ BofA-like scenarios (concept)**
+- **Latency cut** from days → minutes
+- Clear sprint priorities from aggregated themes
 
-**CLI Demo**
+## Tech Snapshot
+**AI:** GPT, Claude, Copilot • **Design:** Figma/Canva • **Proto:** Markdown → Next.js/Nextra
+
+### Sample CLI (concept)
+```bash
+$ npm run generate-survey -- --context="mobile-app-ux" --tone="empathetic"
+✓ 8 questions (≈2 min)
+✓ QR + link created
+✓ Responses streaming to CSV
