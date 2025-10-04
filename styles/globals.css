@@ -1,13 +1,12 @@
-/* Global Prose Styling for Portfolio (Nextra overrides) */
+/* ========== Global Prose Styling for Portfolio (Nextra overrides) ========== */
 
-/* Links */
+/* ----- Links ----- */
 .prose a {
   text-decoration: underline;
   font-weight: 500;
   color: #2563eb; /* blue-600 */
   transition: color 0.2s ease, background-color 0.2s ease;
 }
-
 .prose a:hover {
   color: #1d4ed8; /* blue-700 */
   background-color: rgba(37, 99, 235, 0.08);
@@ -16,7 +15,16 @@
   padding: 0 2px;
 }
 
-/* Headings */
+/* Dark */
+.dark .prose a {
+  color: #60a5fa; /* blue-400 */
+}
+.dark .prose a:hover {
+  color: #93c5fd; /* blue-300 */
+  background-color: rgba(96, 165, 250, 0.15);
+}
+
+/* ----- Headings ----- */
 .prose h1,
 .prose h2,
 .prose h3 {
@@ -26,28 +34,41 @@
   margin-bottom: 0.75em;
   color: #111827; /* gray-900 */
 }
+/* Dark */
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3 {
+  color: #e5e7eb; /* gray-200 */
+}
 
-/* Paragraphs */
+/* ----- Paragraphs ----- */
 .prose p {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
   line-height: 1.7;
   color: #374151; /* gray-700 */
 }
+/* Dark */
+.dark .prose p {
+  color: #d1d5db; /* gray-300 */
+}
 
-/* Lists */
+/* ----- Lists ----- */
 .prose ul,
 .prose ol {
   padding-left: 1.5em;
   margin-top: 0.75em;
   margin-bottom: 0.75em;
 }
-
 .prose li {
   margin-bottom: 0.5em;
 }
+/* Dark */
+.dark .prose li {
+  color: #d1d5db; /* gray-300 */
+}
 
-/* Blockquotes / Callouts */
+/* ----- Blockquotes / Callouts ----- */
 .prose blockquote {
   border-left: 4px solid #3b82f6; /* blue-500 */
   padding-left: 1em;
@@ -57,28 +78,63 @@
   border-radius: 4px;
   margin: 1.25em 0;
 }
+/* Dark */
+.dark .prose blockquote {
+  border-left-color: #60a5fa; /* blue-400 */
+  color: #e5e7eb;            /* gray-200 */
+  background: rgba(96, 165, 250, 0.08);
+}
 
-/* Buttons (for hero section) */
+/* ----- Buttons (Nextra) ----- */
 .nx-button {
   padding: 0.6rem 1.25rem;
   font-weight: 600;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.nx-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 
+/* Primary */
 .nx-button-primary {
   background-color: #2563eb !important; /* blue-600 */
   color: white !important;
   border: none;
 }
-
 .nx-button-primary:hover {
   background-color: #1d4ed8 !important; /* blue-700 */
   transform: translateY(-1px);
 }
 
-/* Secondary button hover */
-.nx-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  transform: translateY(-1px);
+/* Dark buttons */
+.dark .nx-button:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.dark .nx-button-primary {
+  background-color: #3b82f6 !important; /* blue-500 */
+  color: #0b1220 !important;            /* near-black text for contrast */
+}
+.dark .nx-button-primary:hover {
+  background-color: #60a5fa !important; /* blue-400 */
+}
+
+/* ----- Small utilities ----- */
+.prose hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+.dark .prose hr {
+  border-top-color: #374151; /* gray-700 */
+}
+
+.prose code {
+  background: rgba(2, 6, 23, 0.04);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+.dark .prose code {
+  background: rgba(255, 255, 255, 0.06);
 }
