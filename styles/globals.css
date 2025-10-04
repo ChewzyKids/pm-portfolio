@@ -3,6 +3,7 @@
    - Calm, confident palette with subtle motion
    - Works with Nextra (prose + buttons + cards)
    - Dark-first with light-mode fallback
+   - A11y & motion refinements
    ========================================================= */
 
 /* ---------- Design tokens ---------- */
@@ -42,6 +43,11 @@ html, body {
   accent-color: var(--brand);
 }
 
+::selection {
+  background: rgba(91,140,255,.28);
+  color: var(--text);
+}
+
 /* Accessibility: keyboard focus */
 :focus-visible {
   outline: none;
@@ -50,14 +56,37 @@ html, body {
   transition: box-shadow .15s ease;
 }
 
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---------- Links (general) ---------- */
-a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 2px; }
+a {
+  color: var(--link);
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:focus-visible {
+  box-shadow: var(--ring);
+  border-radius: 6px;
+}
 
 /* ---------- Nextra prose overrides ---------- */
 .prose a {
   text-decoration: underline;
   text-underline-offset: 2px;
+  text-decoration-skip-ink: auto;
   font-weight: 500;
   color: var(--link);
   transition: color .2s ease, background-color .2s ease;
@@ -108,15 +137,15 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
 }
 
 .prose code {
-  background: rgba(255,255,255,.06);
-  padding: .2rem .4rem;
+  background: rgba(255,255,255,.08); /* +contrast */
+  padding: .22rem .44rem;            /* +touch */
   border-radius: 4px;
   font-size: .95em;
 }
 
 /* ---------- Nextra buttons ---------- */
 .nx-button {
-  padding: .6rem 1.1rem;
+  padding: .65rem 1.1rem;            /* +tap target */
   font-weight: 600;
   border-radius: .6rem;
   transition: transform .15s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
@@ -127,6 +156,11 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
 .nx-button:hover {
   background: rgba(255,255,255,.06);
   transform: translateY(-1px);
+}
+.nx-button:focus-visible {
+  box-shadow: var(--ring);
+  outline: none;
+  border-radius: .6rem;
 }
 
 .nx-button-primary {
@@ -143,13 +177,15 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
 /* Utility CTA class (for MDX) */
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;
-  padding: .65rem 1rem; border-radius: .65rem;
+  padding: .7rem 1.05rem;             /* +tap target */
+  border-radius: .65rem;
   background: linear-gradient(180deg, var(--brand), var(--brand-2));
   color: #fff; font-weight: 600;
   box-shadow: var(--shadow);
   transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
 }
 .btn:hover { transform: translateY(-1px); filter: brightness(1.04); }
+.btn:focus-visible { box-shadow: var(--ring); outline: none; border-radius: .65rem; }
 .btn.secondary {
   background: var(--bg-elev);
   color: var(--text);
@@ -178,6 +214,11 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
   box-shadow: 0 12px 22px rgba(7, 10, 20, .45);
   border-color: var(--link);
   background-color: #151e38; /* slight lift */
+}
+.nextra-card:focus-visible {
+  box-shadow: var(--ring);
+  outline: none;
+  border-radius: 12px;
 }
 
 .nextra-card h3 {
