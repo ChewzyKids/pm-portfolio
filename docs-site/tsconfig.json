@@ -1,31 +1,17 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "preserve",
-    "module": "esnext",
-    "target": "es2020",
-    "moduleResolution": "bundler",
-    "strict": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": {},
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "allowJs": true,
-    "skipLibCheck": true,
+    "strict": true,
     "noEmit": true,
     "incremental": true,
-    "esModuleInterop": true,
-    "isolatedModules": true
+    "baseUrl": ".",
+    "paths": {}
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.mdx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mdx"]
 }
