@@ -1,6 +1,6 @@
-export default {
-index: 'Home',
-cases: 'Case Studies',
-press: 'Press',
-resume: 'Resume'
+{
+  "index": "Home",
+  "cases": "Case Studies",
+  "press": "Press / Demos",
+  "resume": "Résumé"
 }
