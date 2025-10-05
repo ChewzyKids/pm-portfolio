@@ -1,6 +1,13 @@
 {
+<<<<<<< HEAD
 "index": "Home",
 "cases": "Case Studies",
 "press": "Press / Demos",
 "resume": "Résumé"
+=======
+  "index": "Overview",
+  "cases": "Case Studies",
+  "press": "Press & Demos",
+  "resume": "Résumé"
+>>>>>>> b32453841046a4ad748f9efbd8f1f6c98ccb7dcd
 }
