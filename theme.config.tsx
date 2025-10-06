@@ -11,11 +11,6 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/ChewzyKids/pm-portfolio'
   },
   docsRepositoryBase: 'https://github.com/ChewzyKids/pm-portfolio/tree/main',
-  useNextSeoProps() {
-    return {
-      titleTemplate: '%s – PM Portfolio'
-    }
-  },
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
