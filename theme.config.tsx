@@ -36,6 +36,7 @@ const config: DocsThemeConfig = {
       <meta property="og:description" content="Product leadership combining enterprise CX, AI integration, and rapid execution. Live case studies and technical depth." />
       <meta name="description" content="Product leadership combining enterprise CX, AI integration, and rapid execution. Live case studies and technical depth." />
       <meta name="theme-color" content="#0a1628" />
+      <meta property="og:image" content="/og-image.png" />
       <link rel="icon" href="/favicon.ico" />
     </>
   ),
@@ -43,35 +44,43 @@ const config: DocsThemeConfig = {
   primaryHue: 210,
   primarySaturation: 70,
   footer: {
-    text: (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center',
-        width: '100%',
-        fontSize: '0.875rem',
-        color: 'var(--color-text-tertiary)'
+    component: (
+      <footer style={{ 
+        borderTop: '1px solid var(--color-border, #2d3f5a)',
+        padding: '2rem 0',
+        marginTop: '4rem'
       }}>
-        <span>© {new Date().getFullYear()} Joseph M. Bryant. Still waters run deep.</span>
-        <div style={{ display: 'flex', gap: '16px' }}>
-          <a 
-            href="https://github.com/ChewzyKids" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}
-          >
-            GitHub
-          </a>
-          <a 
-            href="https://linkedin.com/in/josephmbryant" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}
-          >
-            LinkedIn
-          </a>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          maxWidth: '90rem',
+          margin: '0 auto',
+          padding: '0 1rem',
+          fontSize: '0.875rem',
+          color: '#7a8a9f'
+        }}>
+          <span>{new Date().getFullYear()} Joseph M. Bryant. Still waters run deep.</span>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <a 
+              href="https://github.com/ChewzyKids" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: '#a8b5c7', textDecoration: 'none' }}
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://linkedin.com/in/josephmbryant" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: '#a8b5c7', textDecoration: 'none' }}
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
-      </div>
+      </footer>
     ),
   },
   navigation: {
@@ -84,7 +93,7 @@ const config: DocsThemeConfig = {
     backToTop: true,
   },
   editLink: {
-    text: null,
+    component: null,
   },
   feedback: {
     content: null,
@@ -94,7 +103,6 @@ const config: DocsThemeConfig = {
     toggleButton: true,
   },
   gitTimestamp: null,
-  faviconGlyph: '✦',
 }
 
 export default config
