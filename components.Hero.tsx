@@ -1,23 +1,35 @@
-// components/Hero.tsx
 import React from 'react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="mx-auto max-w-3xl px-6 pt-14 pb-10">
-      <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-        Joseph M. Bryant — <span className="opacity-80">AI-First Product Manager</span>
+    <section className="mx-auto max-w-5xl px-6 py-14">
+      <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+        🚀 Welcome to My PM Portfolio
       </h1>
-      <p className="mt-4 text-lg leading-relaxed text-slate-300">
-        Shipping calm, credible outcomes: enterprise CX, founder execution, and live MVPs.
-        Still waters run deep.
+      <p className="mt-3 text-base sm:text-lg text-slate-400 max-w-2xl">
+        This site is now live on Vercel. Explore case studies, demos, and my résumé.
       </p>
-      <div className="mt-6 flex flex-wrap gap-3">
-        <a href="/cases" className="nx-button nx-button-primary">Case Studies</a>
-        <a href="/resume" className="nx-button">Résumé</a>
-        <a href="/press" className="nx-button">Press & Demos</a>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href="/cases"
+          className="inline-flex items-center rounded-md border border-slate-700/50 bg-slate-800/40 px-4 py-2 text-sm no-underline hover:bg-slate-800/60 transition"
+        >
+          View Case Studies →
+        </a>
+        <a
+          href="/press"
+          className="inline-flex items-center rounded-md border border-slate-700/50 bg-slate-800/40 px-4 py-2 text-sm no-underline hover:bg-slate-800/60 transition"
+        >
+          Press & Demos
+        </a>
+        <a
+          href="/resume"
+          className="inline-flex items-center rounded-md border border-slate-700/50 bg-slate-800/40 px-4 py-2 text-sm no-underline hover:bg-slate-800/60 transition"
+        >
+          Résumé
+        </a>
       </div>
     </section>
   );
 };
-
-export default Hero;
