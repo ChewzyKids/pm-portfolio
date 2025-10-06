@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import Link from 'next/link'
 
 const config: DocsThemeConfig = {
   logo: (
@@ -18,11 +19,17 @@ const config: DocsThemeConfig = {
     text: '© 2025 Joseph M. Bryant — Still Waters Run Deep'
   },
 
-  navigation: true, // 👈 ensures top-level nav is visible on desktop
+  // 👇 Enables and defines top navigation links
+  navigation: [
+    { title: 'Home', href: '/' },
+    { title: 'Case Studies', href: '/cases' },
+    { title: 'Press & Demos', href: '/press' },
+    { title: 'Résumé', href: '/resume' }
+  ],
 
   darkMode: true,
   feedback: { content: null },
-  editLink: { component: null }, // avoids build errors (was "text" before)
+  editLink: { component: null },
   toc: { float: true, title: 'On this page' },
   search: { placeholder: 'Search portfolio…' },
 
