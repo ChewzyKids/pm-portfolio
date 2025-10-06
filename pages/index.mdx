@@ -1,49 +1,96 @@
----
-title: Home
-description: AI-first product manager with enterprise CX depth, founder execution, and shipped MVPs.
----
+-----
 
-<div style={{ padding: '24px 0' }}>
-  <h1 style={{ marginBottom: 8 }}>Joseph M. Bryant</h1>
-  <p style={{ opacity: 0.8, marginBottom: 24 }}>
-    AI-First Product Manager • Enterprise CX • Founder/Operator
-  </p>
+## title: Joseph M. Bryant – AI-First Product Manager
 
-  <div style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-    gap: 16,
-    marginTop: 8,
-    marginBottom: 24
-  }}>
-    <a href="/cases" className="card" style={{ textDecoration: 'none' }}>
-      <h3>Case Studies →</h3>
-      <p style={{ opacity: 0.8, marginTop: 8 }}>
-        Problem → Approach → Outcome with measurable impact.
-      </p>
-    </a>
+import { Hero } from ‘../components/Hero’
 
-    <a href="/press" className="card" style={{ textDecoration: 'none' }}>
-      <h3>Press & Demos →</h3>
-      <p style={{ opacity: 0.8, marginTop: 8 }}>
-        Live demo notes, product walkthroughs, and mentions.
-      </p>
-    </a>
+<Hero />
 
-    <a href="/resume" className="card" style={{ textDecoration: 'none' }}>
-      <h3>Résumé →</h3>
-      <p style={{ opacity: 0.8, marginTop: 8 }}>
-        Snapshot of experience and strengths. PDF available.
-      </p>
-    </a>
+<hr className="my-16 border-slate-700/50" />
+
+<div className="mx-auto max-w-5xl px-6 py-12">
+  <div className="mb-8">
+    <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">
+      Featured Work
+    </h2>
+    <p className="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+      Two rapid executions demonstrating AI-assisted product development and technical leadership—from concept to production in days, not quarters.
+    </p>
   </div>
 
-  <div className="card" style={{ marginTop: 8 }}>
-    <h3 style={{ marginBottom: 8 }}>Highlights</h3>
-    <ul>
-      <li><strong>Survey Builder:</strong> 60% faster time-to-insight, +22% response rate.</li>
-      <li><strong>Checkout Rebuild:</strong> +14% conversion lift, −38% cart drop.</li>
-      <li>Ship fast with AI-assists, strong PMF intuition, clean ops.</li>
-    </ul>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+    <a 
+      href="/cases/survey-builder" 
+      className="group block p-6 rounded-lg border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/50 hover:border-slate-600 transition-all duration-200 no-underline"
+    >
+      <h3 className="text-xl font-semibold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">
+        Customer Feedback Survey Builder →
+      </h3>
+      <p className="text-slate-400 text-sm leading-relaxed">
+        AI-powered survey generation with Claude integration. Create, customize, and deploy professional feedback forms in minutes. Live demo shipping real customer insights.
+      </p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          AI Integration
+        </span>
+        <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          React + TypeScript
+        </span>
+        <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          Production MVP
+        </span>
+      </div>
+    </a>
+
+```
+<a 
+  href="/cases/ffs-rebuild" 
+  className="group block p-6 rounded-lg border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/50 hover:border-slate-600 transition-all duration-200 no-underline"
+>
+  <h3 className="text-xl font-semibold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">
+    Fresh Fit Snacks Rebuild →
+  </h3>
+  <p className="text-slate-400 text-sm leading-relaxed">
+    7-day sprint delivering a mobile-first e-commerce platform. Clean architecture, optimized checkout flow, and measurable performance improvements for DTC brand scaling.
+  </p>
+  <div className="mt-4 flex flex-wrap gap-2">
+    <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+      E-commerce
+    </span>
+    <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+      7-Day Delivery
+    </span>
+    <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+      Mobile-First
+    </span>
+  </div>
+</a>
+```
+
+  </div>
+
+  <div className="mt-12 p-6 rounded-lg bg-slate-800/20 border border-slate-700/30">
+    <p className="text-slate-300 text-sm leading-relaxed">
+      <strong className="text-slate-100 font-semibold">Approach:</strong> Ship fast, measure everything, iterate deliberately. 
+      Each project combines AI tooling, clean technical execution, and real business outcomes. 
+      No vanity metrics—just working software solving actual problems.
+    </p>
+  </div>
+</div>
+
+<div className="mx-auto max-w-5xl px-6 py-12">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="text-center p-6">
+      <div className="text-3xl font-bold text-blue-400 mb-2">12+</div>
+      <div className="text-sm text-slate-400">Years Product Leadership</div>
+    </div>
+    <div className="text-center p-6">
+      <div className="text-3xl font-bold text-blue-400 mb-2">2</div>
+      <div className="text-sm text-slate-400">Live Production MVPs</div>
+    </div>
+    <div className="text-center p-6">
+      <div className="text-3xl font-bold text-blue-400 mb-2">AI-First</div>
+      <div className="text-sm text-slate-400">Development Philosophy</div>
+    </div>
   </div>
 </div>
