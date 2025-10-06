@@ -1,36 +1,40 @@
-import type { DocsThemeConfig } from 'nextra-theme-docs'
+import React from 'react'
+import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
   logo: (
     <>
-      <span style={{ fontWeight: 700 }}>Joseph M. Bryant</span>
-      <span style={{ opacity: 0.6, marginLeft: 8 }}>• AI-First PM</span>
+      <span>Joseph M. Bryant</span>
+      <span style={{ opacity: 0.6, marginLeft: '0.25rem' }}>• AI-First PM</span>
     </>
   ),
-  project: { link: 'https://github.com/ChewzyKids/pm-portfolio' },
-  docsRepositoryBase: 'https://github.com/ChewzyKids/pm-portfolio/tree/main',
 
-  navigation: true,
+  project: {
+    link: 'https://github.com/ChewzyKids/pm-portfolio'
+  },
+
+  docsRepositoryBase: 'https://github.com/ChewzyKids/pm-portfolio/blob/main/',
+  footer: {
+    text: '© 2025 Joseph M. Bryant — Still Waters Run Deep'
+  },
+
+  navigation: true, // 👈 ensures top-level nav is visible on desktop
+
   darkMode: true,
-
-  // ok to keep feedback off this way
   feedback: { content: null },
-
-  // ❌ was: editLink: { text: null }
-  // ✅ now: provide an empty component to disable
-  editLink: { component: () => null },
-
+  editLink: { component: null }, // avoids build errors (was "text" before)
   toc: { float: true, title: 'On this page' },
   search: { placeholder: 'Search portfolio…' },
 
-  footer: {
-    // Footer accepts a component/content – this is valid
-    component: (
-      <div style={{ opacity: 0.7 }}>
-        © {new Date().getFullYear()} Joseph M. Bryant — Still Waters Run Deep
-      </div>
-    )
-  }
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Joseph M. Bryant — AI-First PM Portfolio" />
+      <meta property="og:title" content="Joseph M. Bryant — AI-First PM Portfolio" />
+      <meta property="og:image" content="/og.png" />
+      <link rel="icon" href="/favicon.ico" />
+    </>
+  )
 }
 
 export default config
