@@ -37,8 +37,6 @@ const config: DocsThemeConfig = {
     )
   },
   navigation: true,
-  primaryHue: 215,
-  darkMode: true,
   sidebar: {
     defaultMenuCollapseLevel: 1
   },
